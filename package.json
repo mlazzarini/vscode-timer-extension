@@ -4,6 +4,10 @@
 	"description": "Display a timer in vscode to support mob/pair-programming",
 	"version": "0.0.1",
 	"publisher": "mlazzarini",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/mlazzarini/vscode-timer-extension.git"
+	},
 	"engines": {
 		"vscode": "^1.20.0"
 	},
