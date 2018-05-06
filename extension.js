@@ -5,12 +5,13 @@ const vscode = require('vscode');
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
+	const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+	let timer;
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('extension.startTimer', function () {
 		// The code you place here will be executed every time your command is executed
-		const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
 		statusBarItem.show();
 
 		vscode.window.showInputBox({
@@ -27,7 +28,10 @@ function activate(context) {
 			const duration = 60 * value;
 			let currentTime = duration;
 			let minutes, seconds;
-			const timer = setInterval(function () {
+			
+			if(timer) clearInterval(timer);
+
+			timer = setInterval(function () {
 				minutes = parseInt(currentTime / 60, 10)
 				seconds = parseInt(currentTime % 60, 10);
 		
