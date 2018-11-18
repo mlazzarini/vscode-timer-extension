@@ -23,12 +23,16 @@
 			{
 				"command": "extension.startTimer",
 				"title": "Start timer"
+			},
+			{
+				"command": "extension.togglePauseTimer",
+				"title": "Pause timer"
 			}
 		]
 	},
 	"scripts": {
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "node ./node_modules/vscode/bin/test"
+		"install": "node $(npm root)/vscode/bin/install",
+		"test": "node $(npm root)/vscode/bin/test"
 	},
 	"devDependencies": {
 		"typescript": "^2.6.1",
