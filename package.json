@@ -2,6 +2,7 @@
 	"name": "pair-programming-timer",
 	"displayName": "pair-programming-timer",
 	"description": "Display a timer in vscode to support mob/pair-programming",
+	"icon": "icon.png",
 	"version": "0.1.0",
 	"publisher": "mlazzarini",
 	"repository": {
